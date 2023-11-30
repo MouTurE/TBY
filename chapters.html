@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.CSS">
+<body>
+    <div class="background" style="left:0px"></div>
+    <div class="background" style="right:0px"></div>
+    <div id="panel"></div>
+    <center>
+        <h1>Bölüm Seç</h1>
+        <a onclick="localStorage.setItem('currentChapter',this.name);" name="1 – Pilot Bölüm" style="text-decoration: none;" href="reader.html"> <div class= "TextButtons">Bölüm 1</div> </a>
+        <a onclick="localStorage.setItem('currentChapter',this.name);" name="2 – Bir YARIN’ın Ölümü" style="text-decoration: none;" href="reader.html"> <div class= "TextButtons">Bölüm 2</div> </a>
+        <a onclick="localStorage.setItem('currentChapter',this.name);" name="3 – Ali’nin Bahsettiği Huzursuz Rüyalar" style="text-decoration: none;" href="reader.html"> <div class= "TextButtons">Bölüm 3</div> </a>
+        <a onclick="localStorage.setItem('currentChapter',this.name);" name="4 – Paranoya ve Kandırılma" style="text-decoration: none;" href="reader.html"> <div class= "TextButtons">Bölüm 4</div> </a>
+        <a onclick="localStorage.setItem('currentChapter',this.name);" name="5 – Endosaykiyatrik Bölünme" style="text-decoration: none;" href="reader.html"> <div class= "TextButtons">Bölüm 5</div> </a>
+        <a onclick="localStorage.setItem('currentChapter',this.name);" name="6 – Şehirde Gezinti" style="text-decoration: none;" href="reader.html"> <div class= "TextButtons">Bölüm 6</div> </a>
+        <br>
+        <div style="border-top: 1px solid rgb(53, 53, 53);" class= "TextButtons">Aldığın Notlar</div>
+        <a style="text-decoration: none;" href="index.html"> <div class= "TextButtons">Menüye Dön</div> </a> 
+    </center>
+    
+    <script>
+
+        document.querySelectorAll('.background').forEach((e) => {
+
+                    e.style.backgroundImage = "url(" + localStorage.getItem('backgroundImg') + ")";
+                    
+    
+                });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.CSS">
+<body>
+    <div class="background" style="left:0px"></div>
+    <div class="background" style="right:0px"></div>
+    <div id="panel"></div>
+
+    <h1 id="storyTitle" style="text-align: center;">[Bölüm Başlığı]</h1>
+    <p id="storyText" style="margin-left: 25%; width: 50%;height: 320px;" class="paragraph">
+        [Paragraf yazısı]
+    </p>
+    <br>
+    <a style="text-decoration: none;" href="chapters.html"> <div class= "TextButtons" style="margin-left: 31%;">Bölümlere Geri Dön</div> </a> 
+    
+    <script>
+
+        const title = localStorage.getItem("currentChapter");
+        console.log(title);
+        document.getElementById('storyTitle').textContent = title;
+        fetch(title + '.txt')
+        .then(response => response.text()) 
+        .then(textString => {
+            document.getElementById('storyText').textContent = textString;
+        });
+
+    </script>
+
+<script>
+
+    document.querySelectorAll('.background').forEach((e) => {
+
+                e.style.backgroundImage = "url(" + localStorage.getItem('backgroundImg') + ")";
+                
+
+            });
+</script>
+
+
+
+</body>
+</html>

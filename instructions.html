@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.CSS">
+<body>
+    <div class="background" style="left:0px"></div>
+    <div class="background" style="right:0px"></div>
+    <div id="panel"></div>
+
+    <center>
+
+        <h1>Talimatlar</h1>
+        <p style="width: 50%;height: 150px;" class="paragraph">
+            Ayarlar menüsünden yazıların büyüklüğünü ayarlayabilir ve görselleri başka şeylerle değiştirebilirsiniz. 
+            <br><br>Bu hikayeyi okurken rahat olmanız ve zamana yayarak okumanız önerilir. Yanınıza en çok sevdiğiniz yemişlerden veya güzel bir kahve almayı unutmayın. 
+        </p>
+        <br>
+        <a style="text-decoration: none;" href="index.html"> <div class= "TextButtons">Anladım</div> </a> 
+       
+    </center>
+    <script>
+
+        document.querySelectorAll('.background').forEach((e) => {
+
+                    e.style.backgroundImage = "url(" + localStorage.getItem('backgroundImg') + ")";
+                    
+    
+                });
+    </script>
+
+</body>
+</html>

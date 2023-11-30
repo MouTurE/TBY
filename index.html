@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.CSS">
+<body>
+    <div class="background" style="left:0px"></div>
+    <div class="background" style="right:0px"></div>
+    <div id="panel"></div>
+
+    <center>
+        
+        
+        <h1>Tanıdık<br>Bedenlerin Yabancıları</h1>
+        <br>
+        <a style="text-decoration: none;" href="chapters.html"> <div class= "TextButtons">Başlat</div> </a>
+        <a style="text-decoration: none;" href="instructions.html"> <div class="TextButtons">Talimatlar</div> </a>
+        <a style="text-decoration: none;" href="options.html"> <div class="TextButtons">Ayarlar</div> </a>
+
+    </center>
+
+    <script>
+
+        document.querySelectorAll('.background').forEach((e) => {
+
+                    e.style.backgroundImage = "url(" + localStorage.getItem('backgroundImg') + ")";
+                    
+    
+                });
+    </script>
+
+    </body>
+</html>
