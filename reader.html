@@ -9,38 +9,38 @@
 <body>
     <div class="background" style="left:0px"></div>
     <div class="background" style="right:0px"></div>
-    <div id="panel"></div>
+    <div id="panel">
+        <h1 id="storyTitle" style="text-align: center;">[Bölüm Başlığı]</h1>
+        <div id="storyText" style="margin-left: 25%; width: 50%;height: 280px;" class="paragraph">
+           <p> [Paragraf yazısı] </p> 
+        </div>
+        <center>
+            <button onclick="undo()" style="position: relative;">Geri</button>
+            <button onclick="formatText()" style="position: relative;">İlerle</button>
+        </center>
+        <br>
+        <a style="text-decoration: none;" href="chapters.html"> <div class= "TextButtons" style="margin-left: 31%;">Bölümlere Geri Dön</div> </a> 
+        
+    </div>
 
-    <h1 id="storyTitle" style="text-align: center;">[Bölüm Başlığı]</h1>
-    <p id="storyText" style="margin-left: 25%; width: 50%;height: 320px;" class="paragraph">
-        [Paragraf yazısı]
-    </p>
-    <br>
-    <a style="text-decoration: none;" href="chapters.html"> <div class= "TextButtons" style="margin-left: 31%;">Bölümlere Geri Dön</div> </a> 
-    
     <script>
 
         const title = localStorage.getItem("currentChapter");
         console.log(title);
+
+       
         document.getElementById('storyTitle').textContent = title;
         fetch(title + '.txt')
-        .then(response => response.text()) 
-        .then(textString => {
-            document.getElementById('storyText').textContent = textString;
-        });
+                .then(response => response.text())
+                .then(textString => {
+                    testTxt = textString;
+                    formatText();
+                });
 
     </script>
 
-<script>
-
-    document.querySelectorAll('.background').forEach((e) => {
-
-                e.style.backgroundImage = "url(" + localStorage.getItem('backgroundImg') + ")";
-                
-
-            });
-</script>
-
+<script src="configuration.js"></script>
+<script src="format.js"></script>
 
 
 </body>

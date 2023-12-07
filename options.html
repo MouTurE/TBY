@@ -15,9 +15,9 @@
 
         <h1>Ayarlar</h1>
         <input onchange="changeBackground()" id="input" style="display: none;" type="file" accept="image/*">
-        <div class= "TextButtons">Metin Büyüklüğü</div>
+        <div class= "TextButtons">Metin Büyüklüğü [Çalışmıyor]</div>
         <div onclick="document.getElementById('input').click()" class= "TextButtons">Arkaplan Resmi</div>
-        <div class= "TextButtons">Dil</div>
+        <div class= "TextButtons">Dil [Çalışmıyor]</div>
         <br>
        <a style="text-decoration: none;" href="index.html"> <div style="border-top: 1px solid rgb(53, 53, 53);" class= "TextButtons">Menüye Dön</div> </a> 
        
@@ -41,15 +41,7 @@
         }
     </script>
 
-<script>
-
-    document.querySelectorAll('.background').forEach((e) => {
-
-                e.style.backgroundImage = "url(" + localStorage.getItem('backgroundImg') + ")";
-                
-
-            });
-</script>
+<script src="configuration.js"></script>
 
 
 </body>
